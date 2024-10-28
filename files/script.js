@@ -19,3 +19,17 @@ $( document ).ready(function() {
 
 });
 
+
+function sendText() {
+  const inputText = document.getElementById("inputText").value;
+  fetch("/send", {
+	method: "POST",
+	headers: {
+	  "Content-Type": "application/x-www-form-urlencoded"
+	},
+	body: "text=" + encodeURIComponent(inputText)
+  }).then(response => response.text())
+	.then(data => console.log(data))
+	.catch(error => console.error("Error:", error));
+}
+
