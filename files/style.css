@@ -62,3 +62,44 @@ p {
 	position: relative;
 	z-index: 0;
 }
+
+.main_menu_outer_div {
+	display: flex;
+	height: 100vh;
+}
+
+.main_left_div {
+	display: flex;
+	width: 30%;
+	height: 100%;
+	background: #c8a877;
+	
+}
+
+.main_right_div {
+	width: 70%;
+	height: 100%;
+	background: #aaedf6;
+	color: black;
+	overflow: hidden;
+}
+
+.car_image_div {
+	position: relative;
+	left: 20px;
+	top: 50px;
+}
+
+.sonar_car_img {
+	transform: rotate(180deg);
+}
+
+.location_image_div {
+	position: relative;
+	left: 50px;
+	top: 80px;
+	cursor: pointer;
+}
+
+.location_mark_img {
+}
