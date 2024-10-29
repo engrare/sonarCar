@@ -33,3 +33,24 @@ function sendText() {
 	.catch(error => console.error("Error:", error));
 }
 
+  $( function() {
+
+    $( ".location_image_div" ).draggable({ containment: ".main_right_div", scroll: false });
+  } );
+  
+  
+  
+
+  $( window ).resize(function() {
+	beReadyPage();
+	setTimeout(function() { beReadyPage();}, 100);
+});
+  
+  function beReadyPage() {
+	window_height = parseInt($( window ).height());
+	window_width = parseInt($( window ).width());
+	
+  }
+  
+  setTimeout(function() { beReadyPage();}, 200);
+setTimeout(function() { beReadyPage();}, 500);
