@@ -86,10 +86,22 @@ p {
 	overflow: hidden;
 }
 
+.button_des1_outer {
+	
+}
+
+.button_part {
+	display: flex;
+	    flex-direction: row;
+    align-items: center;
+}
+
 .car_image_div {
 	position: relative;
 	left: 20px;
 	top: 50px;
+	width: calc(1.361 * 50px);
+	height: 50px;
 }
 
 .sonar_car_img {
@@ -100,8 +112,13 @@ p {
 	position: relative;
 	left: 50px;
 	top: 80px;
-	cursor: pointer;
+	cursor: all-scroll;
+	height: 40px;
+	width: 40px;
+	  
 }
 
 .location_mark_img {
+	display: block;
+	max-width: 100%;
 }
