@@ -1,4 +1,4 @@
-/* Copyright 2023 Kaya Sertel. All Rights Reserved. */
+/* Copyright 2025 Kaya Sertel. All Rights Reserved. */
 
 body {
     margin: 0px !important;
@@ -74,8 +74,8 @@ p {
 	height: 100%;
 	background: #c8a877;
 	align-items: center;
-    justify-content: center;
-	
+	justify-content: space-around;
+    flex-direction: column;
 }
 
 .main_right_div {
@@ -87,14 +87,199 @@ p {
 }
 
 .button_des1_outer {
-	
+	background-color: #a5b72b;
+	border: 1px solid #3f3625;
+	border-radius: 10px;
+	box-shadow: 6px 6px 3px #3f3625;
+	cursor: pointer;
+	transition: box-shadow 0.3s ease-out
+}
+
+.button_des1_outer:hover {
+	box-shadow: 2px 2px 6px #000;
+}
+
+.button_des1_inner {
+	margin: 8px;
+}
+
+.button_des2_outer {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button_des2_shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.button_des2_edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(25deg 2% 16%) 0%,
+    hsl(25deg 15% 32%) 8%,
+    hsl(25deg 15% 32%) 92%,
+    hsl(25deg 2% 16%) 100%
+  );
+}
+
+.button_des2_front {
+  display: block;
+  position: relative;
+  padding: 6px 16px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: 2px solid #877657;
+  color: white;
+  background: #a5b72b;
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button_des2_front {
+    font-size: 1rem;
+  padding: 8px 20px;
+  }
+}
+
+.button_des2_outer:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button_des2_outer:hover .button_des2_front {
+  transform: translateY(-6px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button_des2_outer:active .button_des2_front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button_des2_outer:hover .button_des2_shadow {
+  transform: translateY(4px);
+  transition:
+    transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button_des2_outer:active .button_des2_shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button_des2_outer:focus:not(:focus-visible) {
+  outline: none;
 }
 
 .button_part {
 	display: flex;
-	    flex-direction: row;
+	flex-direction: row;
+    align-items: center;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.info_robot_part {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+    width: 100%;
+}
+
+.div_charge_bar_outer {
+	background: #8d7752;
+	height: 15px;
+	width: 120px;
+	margin: 0px 30px;
+	border: 3px solid #3f3625;
+	border-radius: 10px;
+}
+
+.div_charge_bar_inner {
+	height: 15px;
+	background: white;
+	width: 25%;
+	border-radius: 10px;
+}
+
+.manuel_control_part_outer {
+	display: flex;
+	width: 100%;
+	border-radius: 200px;
+    justify-content: center;
+    align-items: center;
+	flex-direction: column;
+}
+
+.manuel_control_directions {
+	height: 300px;
+	width: 300px;
+	background: white;
+	border-radius: 200px;
+	margin: 0px 50px 50px 50px;
+}
+
+.manuel_control_turn_outer {
+	display: flex;    
+	flex-direction: row;
+    justify-content: space-around;
+	width: 100%;
+}
+
+
+
+.manuel_control_turn_btn {
+	height: 80px;
+	width: 80px;
+	border-radius: 50px;
+	background: black;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
     align-items: center;
 }
+
+.manuel_control_turn_letter {
+	font-size: 40px;
+}
+
+
 
 .car_image_div {
 	position: relative;
