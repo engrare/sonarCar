@@ -1,4 +1,4 @@
-<!-- Copyright 2023 Kaya Sertel. All Rights Reserved.  -->
+<!-- Copyright 2025 Kaya Sertel. All Rights Reserved.  -->
 <!DOCTYPE html>
 <html  lang="tr" dir="ltr" data-cast-api-enabled="true">
 <head>
@@ -21,12 +21,39 @@
 		<div class="main_menu_outer_div">
 			<div class="main_left_div">
 				<div class="button_part">
-					<div class="button_des1_outer mapping_btn">MAPPING</div>
-					<div class="button_des1_outer str_msn_btn">START MISSION</div>
-					<div class="button_des1_outer stop_msn_btn">STOP MISSION</div>
+					<!--<div class="button_des1_outer mapping_btn"><div class="button_des1_inner">MAPPING</div></div>
+					<div class="button_des1_outer str_msn_btn"><div class="button_des1_inner">START MISSION</div></div>
+					<div class="button_des1_outer stop_msn_btn"><div class="button_des1_inner">STOP MISSION</div></div>-->
+					<button class="button_des2_outer mapping_btn" role="button" onclick="mapping()">
+						<div class="button_des2_shadow"></div>
+						<div class="button_des2_edge"></div>
+						<div class="button_des2_front">MAPPING</div>
+					</button>
+					<button class="button_des2_outer str_msn_btn" role="button" onclick="startMission()">
+						<div class="button_des2_shadow"></div>
+						<div class="button_des2_edge"></div>
+						<div class="button_des2_front">START MISSION</div>
+					</button>
+					<button class="button_des2_outer stop_msn_btn" role="button" onclick="stopMission()">
+						<div class="button_des2_shadow"></div>
+						<div class="button_des2_edge"></div>
+						<div class="button_des2_front">STOP MISSION</div>
+					</button>
 				</div>
-				<input type="text" id="inputText" placeholder="Enter text" />
-				<button onclick="sendText()">Send</button>
+				
+				<div class="info_robot_part">25%
+					<div class="div_charge_bar_outer"><div class="div_charge_bar_inner"></div></div>
+					<div class="current_coord_text_outer">Current:<div class="current_coord_text">X: 20 Y: 35</div></div>
+					<div class="new_coord_text_outer">New:<div class="new_coord_text">X: 20 Y: 35</div></div>
+				</div>
+				
+				<div class="manuel_control_part_outer">
+					<div class="manuel_control_turn_outer">
+						<div class="manuel_control_turn_btn" onclick="moveRobot('l')"><div class="manuel_control_turn_letter">Q</div></div>
+						<div class="manuel_control_turn_btn" onclick="moveRobot('r')"><div class="manuel_control_turn_letter">E</div></div>
+					</div>
+					<div class="manuel_control_directions"><div class="manuel_control_dir_letter">WASD</div></div>
+				</div>
 			</div>
 			
 			<div class="main_right_div">
