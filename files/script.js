@@ -19,26 +19,14 @@ $( document ).ready(function() {
 
 });
 
-
-function sendText() {
-  const inputText = document.getElementById("inputText").value;
-  fetch("/send", {
-	method: "POST",
-	headers: {
-	  "Content-Type": "application/x-www-form-urlencoded"
-	},
-	body: "text=" + encodeURIComponent(inputText)
-  }).then(response => response.text())
-	.then(data => console.log(data))
-	.catch(error => console.error("Error:", error));
-}
-
   $( function() {
 
-    $( ".location_image_div" ).draggable({ containment: ".main_right_div", scroll: false });
+    $( ".location_image_div" ).draggable({ drag: function() {refCoordinates();}, containment: ".main_right_div", scroll: false }); //drag, stop, start
   } );
   
-  
+function refCoordinates() {
+	$( ".new_coord_text" ).text("X: " + Math.round(($( ".location_image_div" ).position().left - $( ".main_left_div" ).width())/10)*10 + " Y: " + Math.round($( ".location_image_div" ).position().top/10)*10);
+}
   
 
   $( window ).resize(function() {
@@ -52,5 +40,21 @@ function sendText() {
 	
   }
   
+  
+  
+  function sendText(inputText) {
+  fetch("/send", {
+	method: "POST",
+	headers: {
+	  "Content-Type": "application/x-www-form-urlencoded"
+	},
+	body: "text=" + encodeURIComponent(inputText)
+  }).then(response => response.text())
+	.then(data => console.log(data))
+	.catch(error => console.error("Error:", error));
+}
+  
   setTimeout(function() { beReadyPage();}, 200);
 setTimeout(function() { beReadyPage();}, 500);
+
+
