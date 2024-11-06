@@ -1,6 +1,6 @@
 //Copyright 2025 Kaya Sertel. All Rights Reserved.
 var is_mobile_phone = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
-
+var key_pressed = false;
 
 fetch('https://raw.githubusercontent.com/eylulberil/encoded_key/main/keys.json')
   .then(response => response.json())
@@ -34,6 +34,21 @@ function refCoordinates() {
 	setTimeout(function() { beReadyPage();}, 100);
 });
   
+  $("body").keydown(function(event) {
+  if (!key_pressed) {
+        var keyPressed = keys[event.keyCode];
+        console.log(keyPressed);
+    console.log(" key pressed");
+    key_pressed = true;
+  };
+});
+
+$("body").keyup(function(event) {
+  key_pressed = false;
+  console.log(' key released');
+});
+  
+  
   function beReadyPage() {
 	window_height = parseInt($( window ).height());
 	window_width = parseInt($( window ).width());
@@ -56,5 +71,4 @@ function refCoordinates() {
   
   setTimeout(function() { beReadyPage();}, 200);
 setTimeout(function() { beReadyPage();}, 500);
-
 
