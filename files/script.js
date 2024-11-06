@@ -1,6 +1,6 @@
 //Copyright 2025 Kaya Sertel. All Rights Reserved.
 var is_mobile_phone = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
-var key_pressed = false;
+var key_pressed = [false, false, false, false, false, false];
 
 fetch('https://raw.githubusercontent.com/eylulberil/encoded_key/main/keys.json')
   .then(response => response.json())
@@ -14,9 +14,49 @@ fetch('https://raw.githubusercontent.com/eylulberil/encoded_key/main/keys.json')
     console.log('Error:', error);
   });
 
-$( document ).ready(function() {
+$(document).ready(function() {
+	$(document).keydown(function(event) {
+		// When a key is pressed
+		var key = event.key; // Get the key that was pressed
+		//console.log(key + ' key pressed');
+		if(key == 'q' && !key_pressed[0]) {
+			console.log("turning right");
+			key_pressed[0] = true;
+		} else if(key == 'e' && !key_pressed[1]) {
+			console.log("turning left");
+			key_pressed[1] = true;
+		} else	if(key == 'w' && !key_pressed[2]) {
+			console.log("going forward");
+			key_pressed[2] = true;
+		} else	if(key == 'a' && !key_pressed[3]) {
+			console.log("going left");
+			key_pressed[3] = true;
+		} else	if(key == 's' && !key_pressed[4]) {
+			console.log("going backward");
+			key_pressed[4] = true;
+		}else if(key == 'd' && !key_pressed[5]) {
+			console.log("going right");
+			key_pressed[5] = true;
+		}
+	});
 
-
+	$(document).keyup(function(event) {
+		// When a key is released
+		var key = event.key; // Get the key that was released
+		if(key == 'q') {
+			key_pressed[0] = false;
+		} else if(key == 'e') {
+			key_pressed[1] = false;
+		} else	if(key == 'w') {
+			key_pressed[2] = false;
+		} else	if(key == 'a') {
+			key_pressed[3] = false;
+		} else	if(key == 's') {
+			key_pressed[4] = false;
+		} else if(key == 'd') {
+			key_pressed[5] = false;
+		}
+	});
 });
 
   $( function() {
