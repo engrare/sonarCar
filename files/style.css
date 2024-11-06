@@ -279,22 +279,6 @@ p {
 	font-size: 40px;
 }
 
-.manuel_control_go_letter {
-	font-size: 40px;
-	color: black;
-	height: 80px;
-	width: 80px;
-	display: flex;
-	align-items: center;
-    justify-content: center;
-	
-}
-
-.manuel_control_center_letters {
-	display: flex;
-	
-}
-/*clip-path: polygon(50% 0%, 0% 100%, 100% 100%);*/
 
 
 .car_image_div {
