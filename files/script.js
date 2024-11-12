@@ -95,6 +95,10 @@ $("body").keyup(function(event) {
 	
   }
   
+  function moveRobot(inputText) {
+	  console.log("Please Enable moveRobot function");
+  }
+  
   
   
   function sendText(inputText) {
