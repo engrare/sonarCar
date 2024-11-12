@@ -279,20 +279,28 @@ p {
 	font-size: 40px;
 }
 
+.manuel_control_dir_letter {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+}
+
 .manuel_control_go_letter {
 	font-size: 40px;
-	color: black;
+	color: white;
 	height: 80px;
-	width: 80px;
+	width: 100%;
 	display: flex;
 	align-items: center;
     justify-content: center;
+	margin: 5px;
 	
 }
 
 .manuel_control_center_letters {
 	display: flex;
-	
+	justify-content: space-between;
 }
 /*clip-path: polygon(50% 0%, 0% 100%, 100% 100%);*/
 
