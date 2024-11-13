@@ -103,11 +103,11 @@ function buttonStateChanged(key, bool_btn_state) {
 			key_pressed[3] = true;
 		} else	if(key == 's' && !key_pressed[4]) {
 			//console.log("going backward");
-			moveRobot('r');
+			moveRobot('b');
 			key_pressed[4] = true;
 		}else if(key == 'd' && !key_pressed[5]) {
 			//console.log("going right");
-			moveRobot('b');
+			moveRobot('r');
 			key_pressed[5] = true;
 		}
 	} else {
