@@ -110,6 +110,7 @@ function buttonStateChanged(key, bool_btn_state) {
 			key_pressed[5] = true;
 		}
 	} else {
+		let is_related = true;
 		if(key == 'q') {
 			key_pressed[0] = false;
 		} else if(key == 'e') {
@@ -122,13 +123,18 @@ function buttonStateChanged(key, bool_btn_state) {
 			key_pressed[4] = false;
 		} else if(key == 'd') {
 			key_pressed[5] = false;
+		} else {
+			is_related = false;
 		}
-		let i = key_pressed.length;
-		while(i--) {
-			if(key_pressed[i]){
-				break;
-			} else if(i == 0) {
-				moveRobot('s'); //stop
+		console.log(is_related);
+		if(is_related) {
+			let i = key_pressed.length;
+			while(i--) {
+				if(key_pressed[i]){
+					break;
+				} else if(i == 0) {
+					moveRobot('s'); //stop
+				}
 			}
 		}
 	}
