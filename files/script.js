@@ -20,52 +20,13 @@ $(document).ready(function() {
 	$(document).keydown(function(event) {
 		// When a key is pressed
 		var key = event.key; // Get the key that was pressed
-		//console.log(key + ' key pressed');
 		buttonStateChanged(key, true);
-		/*if(key == 'q' && !key_pressed[0]) {
-			console.log("turning right");
-			moveRobot('q');
-			key_pressed[0] = true;
-		} else if(key == 'e' && !key_pressed[1]) {
-			console.log("turning left");
-			moveRobot('e');
-			key_pressed[1] = true;
-		} else	if(key == 'w' && !key_pressed[2]) {
-			console.log("going forward");
-			moveRobot('f');
-			key_pressed[2] = true;
-		} else	if(key == 'a' && !key_pressed[3]) {
-			console.log("going left");
-			moveRobot('l');
-			key_pressed[3] = true;
-		} else	if(key == 's' && !key_pressed[4]) {
-			console.log("going backward");
-			moveRobot('r');
-			key_pressed[4] = true;
-		}else if(key == 'd' && !key_pressed[5]) {
-			console.log("going right");
-			moveRobot('b');
-			key_pressed[5] = true;
-		}*/
 	});
 
 	$(document).keyup(function(event) {
 		// When a key is released
 		var key = event.key; // Get the key that was released
 		buttonStateChanged(key, false);
-		/*if(key == 'q') {
-			key_pressed[0] = false;
-		} else if(key == 'e') {
-			key_pressed[1] = false;
-		} else	if(key == 'w') {
-			key_pressed[2] = false;
-		} else	if(key == 'a') {
-			key_pressed[3] = false;
-		} else	if(key == 's') {
-			key_pressed[4] = false;
-		} else if(key == 'd') {
-			key_pressed[5] = false;
-		}*/
 	});
 });
 
@@ -86,47 +47,65 @@ function buttonStateChanged(key, bool_btn_state) {
 	if(bool_btn_state) {
 		if(key == 'q' && !key_pressed[0]) {
 			//console.log("turning right");
+			$(".manuel_control_turn_btn:not(:eq(0))").css("background", "black");
+			$(".manuel_control_turn_btn:eq(0)").css("background", "#3d3d3d");
 			moveRobot('q');
 			key_pressed[0] = true;
 		} else if(key == 'e' && !key_pressed[1]) {
 			//console.log("turning left");
+			$(".manuel_control_turn_btn:not(:eq(1))").css("background", "black");
+			$(".manuel_control_turn_btn:eq(1)").css("background", "#3d3d3d");
 			moveRobot('e');
 			key_pressed[1] = true;
 		} else	if(key == 'w' && !key_pressed[2]) {
 			//console.log("going forward");
+			$(".manuel_control_turn_btn:not(:eq(2))").css("background", "black");
+			$(".manuel_control_turn_btn:eq(2)").css("background", "#3d3d3d");
 			moveRobot('f');
 			key_pressed[2] = true;
 		} else	if(key == 'a' && !key_pressed[3]) {
 			//console.log("going left");
+			$(".manuel_control_turn_btn:not(:eq(3))").css("background", "black");
+			$(".manuel_control_turn_btn:eq(3)").css("background", "#3d3d3d");
 			moveRobot('l');
 			key_pressed[3] = true;
-		} else	if(key == 's' && !key_pressed[4]) {
+		} else	if(key == 'd' && !key_pressed[4]) {
 			//console.log("going backward");
-			moveRobot('b');
-			key_pressed[4] = true;
-		}else if(key == 'd' && !key_pressed[5]) {
-			//console.log("going right");
+			$(".manuel_control_turn_btn:not(:eq(4))").css("background", "black");
+			$(".manuel_control_turn_btn:eq(4)").css("background", "#3d3d3d");
 			moveRobot('r');
+			key_pressed[4] = true;
+		}else if(key == 's' && !key_pressed[5]) {
+			//console.log("going right");
+			$(".manuel_control_turn_btn:not(:eq(5))").css("background", "black");
+			$(".manuel_control_turn_btn:eq(5)").css("background", "#3d3d3d");
+			moveRobot('b');
 			key_pressed[5] = true;
 		}
 	} else {
 		let is_related = true;
 		if(key == 'q') {
 			key_pressed[0] = false;
+			$(".manuel_control_turn_btn:eq(0)").css("background", "black");
 		} else if(key == 'e') {
 			key_pressed[1] = false;
+			$(".manuel_control_turn_btn:eq(1)").css("background", "black");
 		} else	if(key == 'w') {
 			key_pressed[2] = false;
+			$(".manuel_control_turn_btn:eq(2)").css("background", "black");
 		} else	if(key == 'a') {
 			key_pressed[3] = false;
-		} else	if(key == 's') {
+			$(".manuel_control_turn_btn:eq(3)").css("background", "black");
+		} else	if(key == 'd') {
 			key_pressed[4] = false;
-		} else if(key == 'd') {
+			$(".manuel_control_turn_btn:eq(4)").css("background", "black");
+		} else if(key == 's') {
 			key_pressed[5] = false;
+			$(".manuel_control_turn_btn:eq(5)").css("background", "black");
 		} else {
 			is_related = false;
+			$(".manuel_control_turn_btn").css("background", "black");
 		}
-		console.log(is_related);
 		if(is_related) {
 			let i = key_pressed.length;
 			while(i--) {
