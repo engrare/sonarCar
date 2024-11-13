@@ -1,8 +1,7 @@
 //Copyright 2025 Kaya Sertel. All Rights Reserved.
 var is_mobile_phone = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 var key_pressed = [false, false, false, false, false, false];
-var new_X_coor = 0;
-var new_Y_coor = 0;
+var new_X_coor = 0, new_Y_coor = 0;
 
 
 fetch('https://raw.githubusercontent.com/eylulberil/encoded_key/main/keys.json')
