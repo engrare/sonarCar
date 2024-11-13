@@ -49,15 +49,15 @@
 				
 				<div class="manuel_control_part_outer">
 					<div class="manuel_control_turn_outer">
-						<div class="manuel_control_turn_btn" onclick="moveRobot('l')"><div class="manuel_control_turn_letter">Q</div></div>
-						<div class="manuel_control_turn_btn" onclick="moveRobot('r')"><div class="manuel_control_turn_letter">E</div></div>
+						<div class="manuel_control_turn_btn" onclick="buttonStateChanged('q', false)" onmousedown="buttonStateChanged('q', true)"><div class="manuel_control_turn_letter">Q</div></div>
+						<div class="manuel_control_turn_btn" onclick="buttonStateChanged('e', false)" onmousedown="buttonStateChanged('e', true)"><div class="manuel_control_turn_letter">E</div></div>
 					</div>
 					<div class="manuel_control_directions">
 						<div class="manuel_control_dir_letter">
-							<div class="manuel_control_go_letter"><div class="manuel_control_turn_btn" onclick="moveRobot('f')">W</div></div>
-							<div class="manuel_control_center_letters"><div class="manuel_control_go_letter" style="width: unset;"><div class="manuel_control_turn_btn" onclick="moveRobot('l')">A</div></div>
-							<div class="manuel_control_go_letter" style="width: unset;"><div class="manuel_control_turn_btn" onclick="moveRobot('r')">S</div></div></div>
-							<div class="manuel_control_go_letter"><div class="manuel_control_turn_btn" onclick="moveRobot('b')">D</div></div>
+							<div class="manuel_control_go_letter"><div class="manuel_control_turn_btn" onclick="buttonStateChanged('w', false)" onmousedown="buttonStateChanged('w', true)">W</div></div>
+							<div class="manuel_control_center_letters"><div class="manuel_control_go_letter" style="width: unset;"><div class="manuel_control_turn_btn"  onclick="buttonStateChanged('a', false)" onmousedown="buttonStateChanged('a', true)">A</div></div>
+							<div class="manuel_control_go_letter" style="width: unset;"><div class="manuel_control_turn_btn"  onclick="buttonStateChanged('s', false)" onmousedown="buttonStateChanged('s', true)">S</div></div></div>
+							<div class="manuel_control_go_letter"><div class="manuel_control_turn_btn"  onclick="buttonStateChanged('d', false)" onmousedown="buttonStateChanged('d', true)">D</div></div>
 						</div>
 					</div>
 				</div>
