@@ -117,10 +117,14 @@ function buttonStateChanged(key, bool_btn_state) {
 			}
 		}
 	}
-	
 }
 
 function mapping() {
+	var sendstr = "";
+	//sendText(inputText);
+}
+
+function startMission() {
 	var sendstr = "";
 	//sendText(inputText);
 }
@@ -137,8 +141,8 @@ function mapping() {
   }
   
   function moveRobot(inputText) {
-	  //console.log("The " + inputText + " text will be sended however please Enable moveRobot function first.");
-	  sendText(inputText);
+	  console.log("The " + inputText + " text will be sended however please Enable moveRobot function first.");
+	  //sendText("mg" + inputText + "|");
   }
   
   
