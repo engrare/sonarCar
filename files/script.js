@@ -124,7 +124,7 @@ function mapping() {
 }
 
 function startMission() {
-	sendText("sk" + Math.round(new_X_coor/20) + "sk" + Math.round(new_Y_coor/20) + "|");
+	sendText("sk" + Math.round(new_X_coor/20) + "a" + Math.round(new_Y_coor/20) + "|");
 }
 
   $( window ).resize(function() {
