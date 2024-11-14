@@ -112,7 +112,7 @@ function buttonStateChanged(key, bool_btn_state) {
 				if(key_pressed[i]){
 					break;
 				} else if(i == 0) {
-					moveRobot('p'); //stop
+					moveRobot('s'); //stop
 				}
 			}
 		}
