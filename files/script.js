@@ -2,7 +2,7 @@
 var is_mobile_phone = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ? true : false;
 var key_pressed = [false, false, false, false, false, false];
 var new_X_coor = 0, new_Y_coor = 0;
-
+var encryption_chars = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`{}~";
 
 fetch('https://raw.githubusercontent.com/eylulberil/encoded_key/main/keys.json')
   .then(response => response.json())
@@ -120,13 +120,11 @@ function buttonStateChanged(key, bool_btn_state) {
 }
 
 function mapping() {
-	var sendstr = "";
-	//sendText(inputText);
+	  sendText("ksm|");
 }
 
 function startMission() {
-	var sendstr = "";
-	//sendText(inputText);
+	sendText("sk" + Math.round(new_X_coor/20) + "sk" + Math.round(new_Y_coor/20) + "|");
 }
 
   $( window ).resize(function() {
@@ -134,20 +132,20 @@ function startMission() {
 	setTimeout(function() { beReadyPage();}, 100);
 });
   
-  function beReadyPage() {
+function beReadyPage() {
 	window_height = parseInt($( window ).height());
 	window_width = parseInt($( window ).width());
-	
-  }
+}
   
-  function moveRobot(inputText) {
-	  console.log("The " + inputText + " text will be sended however please Enable moveRobot function first.");
-	  //sendText("mg" + inputText + "|");
-  }
-  
-  
+function moveRobot(inputText) {
+	sendText("ks" + inputText + "|");
+}
   
   function sendText(inputText) {
+	  if(!is_esp) {
+		  console.log("The " + inputText + " text will be sended however please Enable moveRobot function first.");
+		  return; //delete this to Enable function
+	  }
   fetch("/send", {
 	method: "POST",
 	headers: {
