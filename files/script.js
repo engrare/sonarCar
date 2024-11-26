@@ -112,7 +112,7 @@ function buttonStateChanged(key, bool_btn_state) {
 				if(key_pressed[i]){
 					break;
 				} else if(i == 0) {
-					moveRobot('s'); //stop
+					moveRobot('p'); //stop
 				}
 			}
 		}
@@ -120,7 +120,11 @@ function buttonStateChanged(key, bool_btn_state) {
 }
 
 function mapping() {
-	  sendText("ksm|");
+	sendText("ksm|");
+}
+
+function stopMission() {
+	sendText("kss|");
 }
 
 function startMission() {
