@@ -1,3 +1,4 @@
+//when coding select: NodeMCU 1.0 (ESP-12E Module)
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
@@ -5,6 +6,14 @@ const char* ssid = "PUE-WLAN";  // Your WiFi SSID with spaces
 const char* password = "4001133866148221";  // Replace with your WiFi password
 
 ESP8266WebServer server(80);  // Create a server on port 80
+
+IPAddress local_IP(192, 168, 1, 184);
+// Set your Gateway IP address
+IPAddress gateway(192, 168, 1, 1);
+
+IPAddress subnet(255, 255, 0, 0);
+IPAddress primaryDNS(8, 8, 8, 8);   //optional
+IPAddress secondaryDNS(8, 8, 4, 4); //optional
 
 String htmlPage = R"rawliteral(
 <!-- Copyright 2025 Kaya Sertel. All Rights Reserved.  -->
@@ -17,6 +26,9 @@ String htmlPage = R"rawliteral(
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.2/css/all.css">
 <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+<script>
+var is_esp = true;
+</script>
 <script src="https://sonarcar.engrare.com/files/script.js"></script>
 <link rel="stylesheet" href="https://sonarcar.engrare.com/files/style.css">
 <!--<script src="./files/script.js"></script>
@@ -105,6 +117,7 @@ void handleSendText() {
 
 void setup() {
   Serial.begin(19200);
+  WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS);
   WiFi.begin(ssid, password);
 
   Serial.print("Connecting to WiFi");
